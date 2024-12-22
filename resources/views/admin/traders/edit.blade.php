@@ -42,62 +42,10 @@
                                     <input class="form-control text-light bg-dark" type="text" name="trader_name"
                                         value="{{ old('trader_name', $trader->trader_name) }}" required>
                                 </div>
-
                                 <div class="form-group col-md-6">
-                                    <h5 class="text-light">Trading Minimum Amount ($)</h5>
-                                    <input class="form-control text-light bg-dark" type="text" name="trading_min_amount"
-                                        value="{{ old('trading_min_amount', $trader->trading_min_amount) }}" required>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <h5 class="text-light">Trading Maximum Amount ($)</h5>
-                                    <input class="form-control text-light bg-dark" type="text" name="trading_max_amount"
-                                        value="{{ old('trading_max_amount', $trader->trading_max_amount) }}" required>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <h5 class="text-light">Top Up Interval</h5>
-                                    <select class="form-control text-light bg-dark" name="top_up_interval">
-                                        <option value="Monthly" {{ old('top_up_interval', $trader->top_up_interval) ==
-                                            'Monthly' ? 'selected' : '' }}>Monthly</option>
-                                        <option value="Weekly" {{ old('top_up_interval', $trader->top_up_interval) ==
-                                            'Weekly' ? 'selected' : '' }}>Weekly</option>
-                                        <option value="Daily" {{ old('top_up_interval', $trader->top_up_interval) ==
-                                            'Daily' ? 'selected' : '' }}>Daily</option>
-                                        <option value="Hourly" {{ old('top_up_interval', $trader->top_up_interval) ==
-                                            'Hourly' ? 'selected' : '' }}>Hourly</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <h5 class="text-light">Top Up Type</h5>
-                                    <select class="form-control text-light bg-dark" name="top_up_type">
-                                        <option value="Percentage" {{ old('top_up_type', $trader->top_up_type) ==
-                                            'Percentage' ? 'selected' : '' }}>Percentage</option>
-                                        <option value="Fixed" {{ old('top_up_type', $trader->top_up_type) == 'Fixed' ?
-                                            'selected' : '' }}>Fixed</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <h5 class="text-light">Top Up Amount ($)</h5>
-                                    <input class="form-control text-light bg-dark" type="text" name="top_up_amount"
-                                        value="{{ old('top_up_amount', $trader->top_up_amount) }}" required>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <h5 class="text-light">Investment Duration</h5>
-                                    <input class="form-control text-light bg-dark" type="text"
-                                        name="investment_duration"
-                                        value="{{ old('investment_duration', $trader->investment_duration) }}" required>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <h5 class="text-light">Years of Experience</h5>
-                                    <input class="form-control text-light bg-dark" type="number"
-                                        name="trader_year_of_experience"
-                                        value="{{ old('trader_year_of_experience', $trader->trader_year_of_experience) }}"
-                                        min="0" required>
+                                    <h5 class="text-light">Followers</h5>
+                                    <input class="form-control text-light bg-dark" type="number" name="followers"
+                                        value="{{ old('followers', $trader->followers) }}" min="0" required>
                                 </div>
 
                                 <div class="form-group col-md-6">
@@ -107,16 +55,12 @@
                                         required>
                                 </div>
 
+
+
                                 <div class="form-group col-md-6">
                                     <h5 class="text-light">Risk Index</h5>
                                     <input class="form-control text-light bg-dark" type="number" name="risk_index"
                                         value="{{ old('risk_index', $trader->risk_index) }}" min="0" required>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <h5 class="text-light">Performance</h5>
-                                    <input class="form-control text-light bg-dark" type="text" name="performance"
-                                        value="{{ old('performance', $trader->performance) }}" required>
                                 </div>
 
                                 <div class="form-group col-md-6">
@@ -126,31 +70,6 @@
                                         value="{{ old('total_copied_trade', $trader->total_copied_trade) }}" min="0"
                                         required>
                                 </div>
-
-                                <div class="form-group col-md-6">
-                                    <h5 class="text-light">Active Traders</h5>
-                                    <input class="form-control text-light bg-dark" type="number" name="active_traders"
-                                        value="{{ old('active_traders', $trader->active_traders) }}" min="0" required>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <h5 class="text-light">Country</h5>
-                                    <input class="form-control text-light bg-dark" type="text" name="trader_country"
-                                        value="{{ old('trader_country', $trader->trader_country) }}" required>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <h5 class="text-light">About Trader</h5>
-                                    <textarea class="form-control text-light bg-dark" name="about_trader" rows="4"
-                                        required>{{ old('about_trader', $trader->about_trader) }}</textarea>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <h5 class="text-light">Followers</h5>
-                                    <input class="form-control text-light bg-dark" type="number" name="followers"
-                                        value="{{ old('followers', $trader->followers) }}" min="0" required>
-                                </div>
-
                                 <div class="form-group col-md-6">
                                     <h5 class="text-light">Verified Status</h5>
                                     <select class="form-control text-light bg-dark" name="verified_status" required>
@@ -175,6 +94,7 @@
                                 </div>
                             </div>
                         </form>
+
 
 
 

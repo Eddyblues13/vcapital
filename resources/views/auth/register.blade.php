@@ -6,6 +6,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="3w5AVl4D6j0qwvQbEgRWQxreNZZiGCgF2CFyzuZH">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="bingbot" content="noindex, nofollow">
+    <meta name="scam-advisor" content="noindex, nofollow">
     <title>Vault Capital | Create an Account</title>
 
 

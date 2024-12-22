@@ -44,8 +44,7 @@
                         <div class="pricing-features">
                             <!--	<div class="feature text-light">Minimum trading amount:<span class="text-light">$100</span></div>
 									<div class="feature text-light">Maximum trading amount:<span  class="text-light">$900,000</span></div>-->
-                            <div class="feature text-light">years of Exprience:<span
-                                    class="text-light">{{$trader->trader_year_of_experience}}</span></div>
+
                             <div class="feature text-light">active traders:<span
                                     class="text-light">{{$trader->active_traders}}</span></div>
                             <div class="feature text-light">total copied traders:<span
@@ -56,11 +55,6 @@
                                     class="text-light">{{$trader->risk_index}}</span></div>
                             <div class="feature text-light">Performance:<span
                                     class="text-light">{{$trader->performance}}</span></div>
-                            <div class="feature text-light">country:<span
-                                    class="text-light">{{$trader->trader_country}}</span></div>
-                            <div class="feature text-light">Duration:<span
-                                    class="text-light">{{$trader->investment_duration}}</span></div>
-                            <div class="feature text-light">About Trader:<br>{{$trader->about_trader}}</div>
                         </div> <br>
 
                         <!-- Button -->

@@ -47,20 +47,15 @@
                             <!-- Trader Details -->
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p><strong>About the Trader:</strong> {{ $trader->about_trader }}</p>
-                                    <p><strong>Country:</strong> {{ $trader->trader_country }}</p>
                                     <p><strong>Year of Experience:</strong> {{ $trader->trader_year_of_experience }}</p>
                                     <p><strong>Performance:</strong> {{ $trader->performance }}</p>
                                     <p><strong>Followers:</strong> {{ $trader->followers }}</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <p><strong>Trading Max Amount:</strong> ${{ $trader->trading_max_amount }}</p>
-                                    <p><strong>Trading Min Amount:</strong> ${{ $trader->trading_min_amount }}</p>
+
                                     <p><strong>Top-up Interval:</strong> {{ $trader->top_up_interval }}</p>
                                     <p><strong>Top-up Type:</strong> {{ $trader->top_up_type }}</p>
-                                    <p><strong>Top-up Amount:</strong> ${{ $trader->top_up_amount }}</p>
-                                    <p><strong>Investment Duration:</strong> {{ $trader->investment_duration }} months
-                                    </p>
+
                                 </div>
                             </div>
 

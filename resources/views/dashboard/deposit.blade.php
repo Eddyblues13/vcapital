@@ -39,14 +39,41 @@
             @endif
 
             <div class="row">
-                <div class="col-12">
+                <!-- Buy Crypto Dropdown -->
+                <div class="col-md-6">
+                    <div class="dropdown">
+                        <button class="btn btn-success dropdown-toggle mb-3" type="button" id="buyCryptoButton"
+                            data-bs-toggle="dropdown" aria-expanded="false"
+                            style="font-size: 8px; padding: 10px 20px; margin:10px;">
+                            Buy Crypto
+                        </button>
+
+                        <ul class="dropdown-menu" aria-labelledby="buyCryptoButton">
+                            <li><a class="dropdown-item" href="https://www.binance.com/" target="_blank">Binance</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://www.coinbase.com/" target="_blank">Coinbase</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://www.kraken.com/" target="_blank">Kraken</a></li>
+                            <li><a class="dropdown-item" href="https://www.crypto.com/" target="_blank">Crypto.com</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://www.bitfinex.com/" target="_blank">Bitfinex</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Deposit History Button -->
+                <div class="col-md-6">
                     <div class="page-title-box">
-                        <h4 class="page-title"><a class="btn btn-primary" href="{{route('user.deposits.history')}}">
-                                Deposit
-                                History</a></h4>
+                        <h4 class="page-title">
+                            <a class="btn btn-primary" href="{{ route('user.deposits.history') }}">
+                                Deposit History
+                            </a>
+                        </h4>
                     </div>
                 </div>
             </div>
+
 
             {{-- Edit Ad Form --}}
             <div class="row">

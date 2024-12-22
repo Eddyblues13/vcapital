@@ -37,26 +37,17 @@ class TraderController extends Controller
      */
     public function store(Request $request)
     {
+
         $validated = $request->validate([
             'trader_name' => 'required|string|max:255',
-            'trading_max_amount' => 'required|string|max:255',
-            'trading_min_amount' => 'required|string|max:255',
-            'top_up_interval' => 'required|string|max:255',
-            'top_up_type' => 'required|string|max:255',
-            'top_up_amount' => 'required|string|max:255',
-            'investment_duration' => 'required|string|max:255',
-            'trader_year_of_experience' => 'required|string|max:255',
-            'copier_roi' => 'required|string|max:255',
-            'risk_index' => 'required|string|max:255',
-            'performance' => 'required|string|max:255',
-            'total_copied_trade' => 'required|string|max:255',
-            'active_traders' => 'required|string|max:255',
-            'trader_country' => 'required|string|max:255',
-            'about_trader' => 'required|string|max:500',
-            'followers' => 'required|numeric',  // Validate followers field
+            'followers' => 'required|numeric|min:0',  // Validate followers as a non-negative number
+            'copier_roi' => 'required|numeric|min:0',  // Validate copier ROI as a non-negative number
+            'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',  // Validate picture as an optional image
+            'risk_index' => 'required|numeric|min:0|max:100',  // Validate risk index within a 0-100 range
+            'total_copied_trade' => 'required|numeric|min:0',  // Validate total copied trade as a non-negative number
             'verified_status' => 'required|',  // Validate verified status field
-            'picture' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+
 
         if ($request->hasFile('picture')) {
             $file = $request->file('picture');
@@ -105,23 +96,12 @@ class TraderController extends Controller
         // Validate input fields
         $validated = $request->validate([
             'trader_name' => 'required|string|max:255',
-            'trading_min_amount' => 'required|numeric',
-            'trading_max_amount' => 'required|numeric',
-            'top_up_interval' => 'required|string',
-            'top_up_type' => 'required|string',
-            'top_up_amount' => 'required|numeric',
-            'investment_duration' => 'required|string',
-            'trader_year_of_experience' => 'required|numeric',
-            'copier_roi' => 'required|numeric',
-            'risk_index' => 'required|numeric',
-            'performance' => 'required|string',
-            'total_copied_trade' => 'required|numeric',
-            'active_traders' => 'required|numeric',
-            'trader_country' => 'required|string',
-            'about_trader' => 'required|string',
-            'followers' => 'required|numeric',  // Validate followers field
-            'verified_status' => 'required|boolean',  // Validate verified status field
-            'picture' => 'nullable|image|max:2048', // Optional for update
+            'followers' => 'required|numeric|min:0',  // Validate followers as a non-negative number
+            'copier_roi' => 'required|numeric|min:0',  // Validate copier ROI as a non-negative number
+            'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',  // Validate picture as an optional image
+            'risk_index' => 'required|numeric|min:0|max:100',  // Validate risk index within a 0-100 range
+            'total_copied_trade' => 'required|numeric|min:0',  // Validate total copied trade as a non-negative number
+            'verified_status' => 'required|',  // Validate verified status field
         ]);
 
         // Check if a new picture is uploaded

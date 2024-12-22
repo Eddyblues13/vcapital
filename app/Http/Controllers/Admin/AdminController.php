@@ -1056,7 +1056,7 @@ class AdminController extends Controller
 
         return redirect()->back()->with('error', 'User not found.');
     }
-
+ 
 
     public function addTradePage()
     {

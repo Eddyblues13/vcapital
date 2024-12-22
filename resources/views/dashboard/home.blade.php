@@ -122,51 +122,41 @@
         <script type="text/javascript"
           src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
           {
-                    "symbols": [
-                      [
-                        "Apple",
-                        "AAPL|1D"
-                      ],
-                      [
-                        "Google",
-                        "GOOGL|1D"
-                      ],
-                      [
-                        "Microsoft",
-                        "MSFT|1D"
-                      ],
-                      [
-                        "NASDAQ:TSLA|12M"
-                      ],
-                      [
-                        "NETFLIX",
-                        "NASDAQ:NFLX|12M"
-                      ],
-                      [
-                        "AMAZON",
-                        "NASDAQ:AMZN|12M"
-                      ]
-                    ],
-                    "chartOnly": false,
-                    "width": "100%",
-                    "height": 250,
-                    "locale": "en",
-                    "colorTheme": "dark",
-                    "autosize": false,
-                    "showVolume": false,
-                    "hideDateRanges": false,
-                    "hideMarketStatus": false,
-                    "hideSymbolLogo": false,
-                    "scalePosition": "right",
-                    "scaleMode": "Normal",
-                    "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
-                    "fontSize": "10",
-                    "noTimeScale": false,
-                    "valuesTracking": "1",
-                    "changeMode": "price-and-percent",
-                    "chartType": "line"
-                  }
+  "symbols": [
+    [
+      "Bitcoin",
+      "BITSTAMP:BTCUSD|1D"
+    ],
+    [
+      "Bitcoin",
+      "COINBASE:BTCUSD|1D"
+    ],
+    [
+      "Bitcoin",
+      "BINANCE:BTCUSDT|1D"
+    ]
+  ],
+  "chartOnly": false,
+  "width": "100%",
+  "height": 250,
+  "locale": "en",
+  "colorTheme": "dark",
+  "autosize": false,
+  "showVolume": false,
+  "hideDateRanges": false,
+  "hideMarketStatus": false,
+  "hideSymbolLogo": false,
+  "scalePosition": "right",
+  "scaleMode": "Normal",
+  "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+  "fontSize": "10",
+  "noTimeScale": false,
+  "valuesTracking": "1",
+  "changeMode": "price-and-percent",
+  "chartType": "line"
+}
         </script>
+
       </div>
 
 

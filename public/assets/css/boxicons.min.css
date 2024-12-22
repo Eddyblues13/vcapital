@@ -2,17 +2,16 @@
     font-family: "boxicons";
     font-weight: normal;
     font-style: normal;
-    src: url("https://crownwavestock.com/assets/fonts/boxicons.eot");
-    src: url("https://crownwavestock.com/assets/fonts/boxicons.eot")
+    src: url("https://vaultcapital.live/assets/fonts/boxicons.eot");
+    src: url("https://vaultcapital.live/assets/fonts/boxicons.eot")
             format("embedded-opentype"),
-        url("https://crownwavestock.com/assets/fonts/boxicons.bin")
+        url("https://vaultcapital.live/assets/fonts/boxicons.bin")
             format("woff2"),
-        url("https://crownwavestock.com/assets/fonts/boxicons.woff")
+        url("https://vaultcapital.live/assets/fonts/boxicons.woff")
             format("woff"),
-        url("https://crownwavestock.com/assets/fonts/boxicons-1.bin")
+        url("https://vaultcapital.live/assets/fonts/boxicons-1.bin")
             format("truetype"),
-        url("https://crownwavestock.com/assets/fonts/boxicons.svg")
-            format("svg");
+        url("https://vaultcapital.live/assets/fonts/boxicons.svg") format("svg");
 }
 .bx {
     font-family: "boxicons" !important;

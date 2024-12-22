@@ -22,62 +22,35 @@ use App\Http\Controllers\Admin\TradingPlanController;
 use App\Http\Controllers\Admin\PaymentSettingController;
 
 Route::get('/', function () {
-    return view('home.home');
+    return view('home.homepage');
 });
 
-Route::get('/about', function () {
+Route::get('/about-us', function () {
     return view('home.about');
 });
 
-Route::get('/cfd', function () {
-    return view('home.cfd');
+Route::get('/plan', function () {
+    return view('home.plan');
 });
 
-Route::get('/stocks', function () {
-    return view('home.stocks');
+Route::get('/faqs', function () {
+    return view('home.faq');
 });
 
-Route::get('/product', function () {
-    return view('home.product');
-});
 
-Route::get('/forex', function () {
-    return view('home.forex');
+Route::get('/copy-trading', function () {
+    return view('home.trading');
+});
+Route::get('/terms', function () {
+    return view('home.terms');
 });
 
 Route::get('/contact', function () {
     return view('home.contact');
 });
 
-Route::get('/faq', function () {
-    return view('home.faq');
-});
-
-Route::get('/precious-metals', function () {
-    return view('home.precious-metals');
-});
-
-Route::get('/indices', function () {
-    return view('home.indices');
-});
-
-Route::get('/digital-currency', function () {
-    return view('home.digital-currency');
-});
-
-Route::get('/eur-usd', function () {
-    return view('home.eur-usd');
-});
-Route::get('/gbp-usd', function () {
-    return view('home.gbp-usd');
-});
-
-Route::get('/gold', function () {
-    return view('home.gold');
-});
-
-Route::get('/economic-calender', function () {
-    return view('home.economic-calender');
+Route::get('/plan', function () {
+    return view('home.plan');
 });
 
 Auth::routes();
@@ -293,7 +266,6 @@ Route::prefix('admin')->group(function () {
         Route::get('/trading-plans/edit/{id}', [TradingPlanController::class, 'edit'])->name('admin.edit-trading-plan');
         Route::post('/trading-plans/update/{id}', [TradingPlanController::class, 'update'])->name('admin.update-trading-plan');
         Route::delete('/trading-plans/delete/{id}', [TradingPlanController::class, 'destroy'])->name('admin.delete-trading-plan');
-
         Route::post('/add-signal-strength', [AdminController::class, 'addSignalStrength'])->name('admin.add_signal_strength');
         Route::get('/user/{id}/trades', [TradeController::class, 'index'])->name('admin.user.trades');
         Route::post('/trades', [TradeController::class, 'store'])->name('admin.trades.store');

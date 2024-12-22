@@ -1,281 +1,196 @@
 @include('home.header')
+<!-- Start Page Title Area -->
+<div class="page-title-area bg-5">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>FAQ</h2>
+            <ul>
+                <li>
+                    <a href="{{url('/')}}">
+                        Home
+                    </a>
+                </li>
 
-<script>
-        $('.hamburger__box').click(function () {
-            const div = document.querySelector('header');
-            disclaimer = document.getElementById("disclaimer-full");
-            if (div.classList.contains('mob-menu-active')) {
-                disclaimer.style.display = "block";
-            } else {
-                disclaimer.style.display = "none";
-            }
-        });
+                <li>FAQ</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End Page Title Area -->
 
-        $(document).mouseup(function (e) {
-            var menu = $('.header__mobile-menu');
-            const div = document.querySelector('header');
-            if (!menu.is(e.target) // The target of the click isn't the container.
-                && menu.has(e.target).length === 0 && div.classList.contains('mob-menu-active')) // Nor a child element of the container
-            {
-                disclaimer = document.getElementById("disclaimer-full");
-                if (div.classList.contains('mob-menu-active')) {
-                    disclaimer.style.display = "block";
-                } else {
-                    disclaimer.style.display = "none";
-                }
-            }
-        });
+<!-- Start FAQ Area -->
+<section class="faq-area ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
 
-    </script><style type="text/css">
-    .main-menu__link{
-        color: #000 !important;
-    }
-</style>
-
- <main class="main">
-
-
-
-        <div id="banner" class="simple-banner style5  " style="background-image: url(storage/app/media/trademarket/faq-banner-tm.png);">
-
-            <div class="container">
-                <div class="simple-banner__content">
-                    <div class="simple-banner__content-wrap">
-                        <div class="simple-banner__title" data-aos="fade-up">
-                            <h1>Frequently Asked Questions</h1>
-                        </div>
-
-                        <div class="">
-                            <div class="simple-banner__text text" data-aos="fade-up" data-aos-delay="400">
-                                <div style="max-width:580px;">
-
-                                    <p>Here you can find answers to the most frequently asked questions from new clients.</p>
-                                </div>
-                            </div>
-
-                            <div class="simple-banner__image" data-aos="fade-up" data-aos-delay="200">
-                                <img src="storage/app/media/trademarket/faq-banner-tm.png" alt="Frequently Asked Questions">
-                            </div>
-
-
-
-
-
-
-
-                            <div class="simple-banner__link ">
-                                <div class="combined-links">
-                                    <div class="combined-links__wrap" data-aos="fade-up" data-aos-delay="600">
-                                        <a data-fancybox data-src="#sign-up-modal" data-acc-type="demo" data-acc-plan="" href="javascript:;" class="combined-links__item combined-links__right">Try on Demo</a>
-
-
-                                        <a data-fancybox data-src="#sign-up-modal" data-acc-type="live" data-acc-plan="" href="javascript:;" class="combined-links__item combined-links__left">Start Trading</a>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="warning-text" data-aos="fade-up" data-aos-delay="600">
-                                <p><span style="color: rgb(239, 239, 239);">* Risk Warning: Trading in forex and CFDs could lead to a loss of your invested capital.</span></p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-                <div class="simple-banner__content simple-banner__mobile">
-                    <div class="simple-banner__content-wrap">
-                        <div class="simple-banner__text" data-aos="fade-up" data-aos-delay="400">
-                            <div style="max-width:580px;">
-
-                                <p>Here you can find answers to the most frequently asked questions from new clients.</p>
-                            </div>
-                        </div>
-
-                        <!---->
-                        <div class="simple-banner__combined-links">
-                            <div class="combined-links">
-                                <div class="combined-links__wrap" data-aos="fade-up" data-aos-delay="600">
-                                    <a data-fancybox data-src="#sign-up-modal" href="javascript:;" class="combined-links__item combined-links__right">Try on Demo</a>
-
-
-                                    <a data-fancybox data-src="#sign-up-modal" href="javascript:;" class="combined-links__item combined-links__left">Start Trading</a>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="warning-text" data-aos="fade-up" data-aos-delay="600">
-                            <p><span style="color: rgb(239, 239, 239);">* Risk Warning: Trading in forex and CFDs could lead to a loss of your invested capital.</span></p>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <div id="banner-particles" class="simple-banner__particles"></div>
         </div>
 
-        <div id="faq" class="faq medium_padding" style="background: #FFFFFF;">
-            <div class="container">
-                <div class="faq__title title title_center" data-aos="fade-up">
-                    <p><span style="font-weight:800;color:#80A9C3;">Financial Trading</span> FAQ</p>
-                </div>
-                <div class="accordion faq__list" data-aos="fade-up" data-aos-delay="400">
-                    <div class="accordion__item faq__list-item">
-                        <div class="accordion__item-header faq__list-header">
-                            <span>1. What trading platforms do you offer?</span>
-                            <div class="faq__list-header-icon"></div>
-                        </div>
-                        <div class="accordion__item-body-wrapper faq__list-body">
-                            <div class="accordion__item-body text">
-                                <p>We offer <a href="trading/mt4.html"><strong>MetaTrader 4</strong></a> and our exclusive <a href="dualix-trader.html"><strong>Altruisticmarkets Trader</strong></a> platform.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item faq__list-item">
-                        <div class="accordion__item-header faq__list-header">
-                            <span>2. Can I have more than one trading account?</span>
-                            <div class="faq__list-header-icon"></div>
-                        </div>
-                        <div class="accordion__item-body-wrapper faq__list-body">
-                            <div class="accordion__item-body text">
-                                <p>Yes. You can open multiple live or demo trading accounts for following or testing different strategies.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item faq__list-item">
-                        <div class="accordion__item-header faq__list-header">
-                            <span>3. What products can I trade?</span>
-                            <div class="faq__list-header-icon"></div>
-                        </div>
-                        <div class="accordion__item-body-wrapper faq__list-body">
-                            <div class="accordion__item-body text">
-                                <p>We offer many trading instruments that span various asset classes that you can speculate on using a contract for difference. You can trade CFDs on <a href="range-markets/{{url('/forex')}}#/">Forex</a>, <a href="popular-markets/eurusd.html#/">EUR&amp; USD</a>                                    Shares, <a href="range-markets/indices.html#/">Indices</a>, <a href="range-markets/precious-metals.html">Precious Metals</a>, <a href="range-markets/agriculture.html#/">Soft
-Commodities</a> and <a href="range-markets/energy-{{url('/product')}}#/">Oil &amp; Gas
-Products</a>. Keep in mind that we offer the ability to trade both stocks and CFDs of stocks.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item faq__list-item">
-                        <div class="accordion__item-header faq__list-header">
-                            <span>4. Can I purchase any investments or securities from Altruisticmarkets?</span>
-                            <div class="faq__list-header-icon"></div>
-                        </div>
-                        <div class="accordion__item-body-wrapper faq__list-body">
-                            <div class="accordion__item-body text">
-                                <p dir="ltr">We do not offer any securities apart from stocks.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item faq__list-item">
-                        <div class="accordion__item-header faq__list-header">
-                            <span>5. Are you regulated?</span>
-                            <div class="faq__list-header-icon"></div>
-                        </div>
-                        <div class="accordion__item-body-wrapper faq__list-body">
-                            <div class="accordion__item-body text">
-                                <p>Yes. Altruisticmarkets is regulated by the Cyprus Securities Exchange Commission with license number 208/13 .</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item faq__list-item">
-                        <div class="accordion__item-header faq__list-header">
-                            <span>6. What is the maximum leverage I can trade with?</span>
-                            <div class="faq__list-header-icon"></div>
-                        </div>
-                        <div class="accordion__item-body-wrapper faq__list-body">
-                            <div class="accordion__item-body text">
-                                <p>The amount of leverage that Altruisticmarkets provides to retail clients is determined according to the European Securities and Markets Authority (ESMA) legislation. The maximum amount of leverage which you can use to trade
-                                    forex and CFD instruments with Altruisticmarkets is 1:30. However, according to the regulations, leverage may be lower, depending on the products you trade. Learn more about leverage and margin requirements when trading
-                                    CFDs with Altruisticmarkets&nbsp;<a data-fancybox="" data-src="#sign-up-modal" href="javascript_%3b.html"><strong>Here</strong></a>.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item faq__list-item">
-                        <div class="accordion__item-header faq__list-header">
-                            <span>7. What documents are needed to open a trading account?</span>
-                            <div class="faq__list-header-icon"></div>
-                        </div>
-                        <div class="accordion__item-body-wrapper faq__list-body">
-                            <div class="accordion__item-body text">
-                                <p>To open a trading account with Altruisticmarkets, you need to provide a document that verifies your identity, and another which verifies your address.</p>
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="faq-accordion mb-used">
+                    <ul class="accordion">
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class="bx bx-plus"></i>
+                                How can I buy cryptocurrency?
+                            </a>
 
-                                <p>The documents we require depend on your nationality and country of residence. As a general rule, we require either a passport, national identity card, or a driver's license to prove your identity. We expect a utility bill
-                                    or bank statement for proving your address, not older than three months for fixed services. For example, a mobile phone or mobile internet bill is not ok, but a bill for a fixed internet or telephone line would be acceptable.
-                                    If you have any concerns about what documents are acceptable or not, just reach out to our <a href="contact-us.html"><strong>Support Team</strong></a>.</p>
+                            <div class="accordion-content">
+                                <p>Follow these steps to buy cryptocurrency using the "Buy Crypto" button:</p>
+                                <ul>
+                                    <li>Click on the <strong>"Buy Crypto"</strong> button located at the top of the
+                                        page.</li>
+                                    <li>From the dropdown menu, choose a trusted cryptocurrency exchange platform like
+                                        Binance, Coinbase, Kraken, or others.</li>
+                                    <li>You will be redirected to the official website of the selected platform.</li>
+                                    <li>On the selected platform:
+                                        <ul>
+                                            <li>Create an account or log in if you already have one.</li>
+                                            <li>Complete any required identity verification process.</li>
+                                            <li>Link a payment method, such as a bank account or credit card, to fund
+                                                your purchase.</li>
+                                            <li>Search for the cryptocurrency you wish to buy and complete the
+                                                transaction by following the platform's instructions.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Once your purchase is complete, transfer the cryptocurrency to your secure
+                                        wallet address for safekeeping.</li>
+                                </ul>
+                                <p>If you need assistance, please contact our support team for help.</p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item faq__list-item">
-                        <div class="accordion__item-header faq__list-header">
-                            <span>8. How can I add funds to my trading account?</span>
-                            <div class="faq__list-header-icon"></div>
-                        </div>
-                        <div class="accordion__item-body-wrapper faq__list-body">
-                            <div class="accordion__item-body text">
-                                <p>We offer several reliable and convenient methods to deposit and withdraw funds from your trading account. For example, we support major credit and debit cards, bank wire transfers, PayPal, Skrill, Sofort and others. Learn
-                                    more about how to fund your trading account <a data-fancybox="" data-src="#sign-up-modal" href="javascript_%3b.html"><strong>Here</strong></a>.</p>
+                        </li>
+
+                        <li class="accordion-item">
+                            <a class="accordion-title active" href="javascript:void(0)">
+                                <i class="bx bx-plus"></i>
+                                Is Vault Capital regulated?
+                            </a>
+
+                            <div class="accordion-content show">
+                                <p>Yes, Vault Capital is a registered and regulated Malta investment firm
+                                    with company number C-11498630. You can learn more by clicking <a href="#">Here</a>.
+                                </p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item faq__list-item">
-                        <div class="accordion__item-header faq__list-header">
-                            <span>9. What is the minimum I can deposit to my account?</span>
-                            <div class="faq__list-header-icon"></div>
-                        </div>
-                        <div class="accordion__item-body-wrapper faq__list-body">
-                            <div class="accordion__item-body text">
-                                <p>The lowest amount you can deposit for the first time is 250 EUR/USD/GBP<s>.</s></p>
+                        </li>
+
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class="bx bx-plus"></i>
+                                How do I open an account with you?
+                            </a>
+
+                            <div class="accordion-content">
+                                <p>Opening an account with Vault Capital is quite easy. You need to click
+                                    on the registration link, fill in your details and you will be redirected to our
+                                    portal. You can easily start using your dashboard.</p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item faq__list-item">
-                        <div class="accordion__item-header faq__list-header">
-                            <span>10. How long do withdrawals take?</span>
-                            <div class="faq__list-header-icon"></div>
-                        </div>
-                        <div class="accordion__item-body-wrapper faq__list-body">
-                            <div class="accordion__item-body text">
-                                <p>Altruisticmarkets will process withdrawal requests within 24-hours on business days. Kindly note that even if the request has been processed by Altruisticmarkets internally, it can take a few hours or a few days for the payment
-                                    provider to settle. Generally, e-wallets are settled faster than card withdrawals or bank wire transfers.</p>
+                        </li>
+
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class="bx bx-plus"></i>
+                                What is the minimum deposit amount?
+                            </a>
+
+                            <div class="accordion-content">
+                                <p>The minimum amount for deposit is 150 USD. </p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item faq__list-item">
-                        <div class="accordion__item-header faq__list-header">
-                            <span>11. Why can’t I withdraw funds to my preferred payment method?</span>
-                            <div class="faq__list-header-icon"></div>
-                        </div>
-                        <div class="accordion__item-body-wrapper faq__list-body">
-                            <div class="accordion__item-body text">
-                                <p>Due to anti-money laundering regulations, we must follow strict rules on how we process withdrawals. Any deposits must be returned (i.e. refunded) to the same method used to fund the account. Only profits can be sent to
-                                    another payment method, but that method must be verified before they can be used.</p>
+                        </li>
+
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class="bx bx-plus"></i>
+                                Are there any fees for deposits?
+                            </a>
+
+                            <div class="accordion-content">
+                                <p>No there are none.</p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="accordion__item faq__list-item">
-                        <div class="accordion__item-header faq__list-header">
-                            <span>12. How do you execute my trades?</span>
-                            <div class="faq__list-header-icon"></div>
-                        </div>
-                        <div class="accordion__item-body-wrapper faq__list-body">
-                            <div class="accordion__item-body text">
-                                <p>Altruisticmarkets is classified as a market maker broker. As a market maker broker, Altruisticmarkets is the counterparty on the other side of your trade. Our team of dealers manages the exposure of all clients collectively, some
-                                    customers are long, some are short, and therefore, exposure is netted off. As and when needed, Altruisticmarkets may use its own money to hedge exposure with institutional brokers.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="faq-accordion">
+                    <ul class="accordion">
+                        <li class="accordion-item">
+                            <a class="accordion-title active" href="javascript:void(0)">
+                                <i class="bx bx-plus"></i>
+                                What payment methods can I use to fund my account?
+                            </a>
+
+                            <div class="accordion-content">
+                                <p>You can transfer funds through Bitcoin, Ethereum, Bitcoin Cash and Perfect Money. All
+                                    the details are made available in the deposit section.</p>
                             </div>
-                        </div>
-                    </div>
+                        </li>
+
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class="bx bx-plus"></i>
+                                How long before my deposits reflect?
+                            </a>
+
+                            <div class="accordion-content">
+                                <p>Deposits using Perfect Money reflect on your account instantly. Deposits using
+                                    Bitcoin, Ethereum and Bitcoin Cash reflect after 3 Blockchain confirmations.</p>
+                            </div>
+                        </li>
+
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class="bx bx-plus"></i>
+                                Is there any minimum amount for withdrawal?
+                            </a>
+
+                            <div class="accordion-content">
+                                <p>The minimum amount for withdrawal is 1 USD.</p>
+                            </div>
+                        </li>
+
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class="bx bx-plus"></i>
+                                How long does it take to process my withdrawal request?
+                            </a>
+
+                            <div class="accordion-content">
+                                <p>Withdrawals can be requested anytime and processed in less than 24 hours. </p>
+                            </div>
+                        </li>
+
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class="bx bx-plus"></i>
+                                How do I Cancel my withdrawal request?
+                            </a>
+
+                            <div class="accordion-content">
+                                <p>Once the withdrawal request is approved, it can no longer be cancelled. If the
+                                    withdrawal has not been approved yet, you can cancel it through your portal, under
+                                    Withdraw tab. There, you can see the pending request and cancel it by pressing on
+                                    the bin under the Actions tab. </p>
+                            </div>
+                        </li>
+
+                        <li class="accordion-item">
+                            <a class="accordion-title" href="javascript:void(0)">
+                                <i class="bx bx-plus"></i>
+                                Do you offer a referral commission?
+                            </a>
+
+                            <div class="accordion-content">
+                                <p>Yes, we do. You earn as high as 10% on every successful referral you make..</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        
-    </main>
+    </div>
+</section>
+<!-- End FAQ Area -->
 
 @include('home.footer')

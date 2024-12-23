@@ -143,6 +143,7 @@
         color: #f0be1a;
     }
 </style>
+{{--
 <!-- Start Footer Bottom Area -->
 
 <footer class="footer-bottom-area">
@@ -157,7 +158,7 @@
         </div>
     </div>
 </footer>
-<!-- End Footer Bottom Area -->
+<!-- End Footer Bottom Area --> --}}
 
 <!-- Start Go Top Area -->
 <div class="go-top">

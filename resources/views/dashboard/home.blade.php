@@ -162,294 +162,166 @@
 
       <!-- TradingView Widget -->
       <div class="small-card card widget-flat my-4">
-        <script type="text/javascript"
-          src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-          {
-                    "colorTheme": "dark",
-                    "dateRange": "12M",
-                    "showChart": false,
-                    "locale": "en",
-                    "width": "100%",
-                    "height": "302",
-                    "largeChartUrl": "",
-                    "isTransparent": true,
-                    "showSymbolLogo": true,
-                    "showFloatingTooltip": false,
-                    "tabs": [
-                      {
-                        "title": "Stocks",
-                        "symbols": [
-                          {
-                            "s": "NASDAQ:TSLA"
-                          },
-                          {
-                            "s": "NYSE:GME"
-                          },
-                          {
-                            "s": "NASDAQ:NFLX"
-                          },
-                          {
-                            "s": "SIX:MCD"
-                          },
-                          {
-                            "s": "NASDAQ:GOOG"
-                          }
-                        ],
-                        "originalTitle": "Indices"
-                      }
-                    ]
-                  }
-        </script>
-
-        <script type="text/javascript"
-          src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-          {
-    "colorTheme": "dark",
-    "dateRange": "12M",
-    "showChart": false,
-    "locale": "en",
-    "largeChartUrl": "",
-    "isTransparent": true,
-    "showSymbolLogo": true,
-    "showFloatingTooltip": false,
-    "width": "100%",
-    "height": "302",
-    "tabs": [
-      {
-        "title": "Stocks",
-        "symbols": [
-          {
-            "s": "NASDAQ:AMZN"
-          },
-          {
-            "s": "NASDAQ:META"
-          },
-          {
-            "s": "NASDAQ:AAPL"
-          },
-          {
-            "s": "NYSE:KO"
-          },
-          {
-            "s": "NASDAQ:INTC"
-          }
-        ],
-        "originalTitle": "Indices"
-      }
-    ]
-  }
-        </script>
 
 
-      </div>
-
-      <!-- TradingView Widget -->
-      <div class="small-card card widget-flat my-4">
-        <div class="row g-2">
-          <div class="col-6">
-            <a href="{{ route('user.stocks.page') }}" class="btn btn-outline-primary w-100">Buy Stock</a>
-          </div>
-          <div class="col-6">
-            <a href="{{ route('user.copy.trader.page') }}" class="btn btn-outline-primary w-100">Copy
-              Trade</a>
-          </div>
-        </div>
-        <center>
-
-          <h3 class="text-center">Most Popular Stocks</h3>
-        </center>
-
-        <script type="text/javascript"
-          src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
-          {
-                  "symbols": [
-                    [
-                      "Apple",
-                      "AAPL|1D"
-                    ],
-                    [
-                      "Google",
-                      "GOOGL|1D"
-                    ],
-                    [
-                      "Microsoft",
-                      "MSFT|1D"
-                    ],
-                    [
-                      "Netflix",
-                      "NASDAQ:NFLX|1D"
-                    ],
-                    [
-                      "TELSA INC",
-                      "NASDAQ:TSLA|12M"
-                    ]
-                  ],
-                  "chartOnly": false,
-                  "width": "100%",
-                  "height": "500",
-                  "locale": "en",
-                  "colorTheme": "dark",
-                  "autosize": false,
-                  "showVolume": false,
-                  "hideDateRanges": false,
-                  "hideMarketStatus": false,
-                  "hideSymbolLogo": false,
-                  "scalePosition": "right",
-                  "scaleMode": "Normal",
-                  "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
-                  "fontSize": "10",
-                  "noTimeScale": false,
-                  "valuesTracking": "1",
-                  "changeMode": "price-and-percent",
-                  "chartType": "line"
-                }
-        </script>
-      </div>
-      <!-- Profile Tabs -->
-      <ul class="nav nav-tabs d-flex flex-sm-row justify-content-between mt-3">
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#closed">
-            <i class="bi bi-hourglass-top"></i> Closed
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" data-bs-toggle="tab" href="#active">
-            <i class="bi bi-hourglass"></i> Active
-          </a>
-        </li>
-      </ul>
-
-      <!-- Tab Content -->
-      <div class="tab-content mt-3">
-        <!-- Active Trades -->
-        <div class="tab-pane fade show active" id="active">
-          @if ($open_trades->isEmpty())
-          <div class="text-center py-4">
-            <p>No open trades available.</p>
-          </div>
-          @else
-          @foreach ($open_trades as $trade)
-          @php
-          // Capitalize company name
-          // Convert company name to uppercase
-          $companyName = strtoupper($trade->company);
-
-
-          // Determine logo URL dynamically
-          $logoBaseUrl = 'https://cryptologos.cc/logos/';
-          $logoPath = '';
-
-          // Check company type (crypto, stocks, or default)
-          if (in_array($companyName, ['Bitcoin', 'Ethereum', 'Ripple', 'Litecoin', 'Cardano', 'Dogecoin'])) {
-          // Replace spaces and lowercase for crypto logos
-          $logoPath = $logoBaseUrl . strtolower(str_replace(' ', '-', $companyName)) . '-logo.png';
-          } elseif (in_array($companyName, ['Amazon', 'Apple', 'Tesla', 'Microsoft', 'Google'])) {
-          // Use stock logos from external resources (example URL)
-          $logoPath = "https://logo.clearbit.com/" . strtolower($companyName) . ".com";
-          } else {
-          // Fallback placeholder
-          $logoPath = 'https://placehold.co/50x50?text=' . urlencode($companyName);
-          }
-          @endphp
-
-          <div class="trade-item d-flex justify-content-between align-items-center">
-            <div>
-              <img src="{{ $logoPath }}" alt="{{ $companyName }}" width="30"
-                onerror="this.src='https://placehold.co/50x50?text=NA'">
-              <span>BUY {{ number_format($trade->amount, 4) }} {{ $companyName }}</span><br>
-              <small>{{ $trade->asset }}</small>
+        <!-- TradingView Widget -->
+        <div class="small-card card widget-flat my-4">
+          <div class="row g-2">
+            <div class="col-6">
+              <a href="{{ route('user.stocks.page') }}" class="btn btn-outline-primary w-100">Buy Stock</a>
             </div>
-            <span class="text-success">${{ number_format($trade->take_profit, 2) }}</span>
-          </div>
-          @endforeach
-          @endif
-        </div>
-
-        <!-- Closed Trades -->
-        <div class="tab-pane fade" id="closed">
-          @if ($closed_trades->isEmpty())
-          <div class="text-center py-4">
-            <p>No closed trades available.</p>
-          </div>
-          @else
-          @foreach ($closed_trades as $trade)
-          @php
-          // Capitalize company name
-          // Convert company name to uppercase
-          $companyName = strtoupper($trade->company);
-
-          // Determine logo URL dynamically
-          $logoBaseUrl = 'https://cryptologos.cc/logos/';
-          $logoPath = '';
-
-          // Check company type (crypto, stocks, or default)
-          if (in_array($companyName, ['Bitcoin', 'Ethereum', 'Ripple', 'Litecoin', 'Cardano', 'Dogecoin'])) {
-          // Replace spaces and lowercase for crypto logos
-          $logoPath = $logoBaseUrl . strtolower(str_replace(' ', '-', $companyName)) . '-logo.png';
-          } elseif (in_array($companyName, ['Amazon', 'Apple', 'Tesla', 'Microsoft', 'Google'])) {
-          // Use stock logos from external resources (example URL)
-          $logoPath = "https://logo.clearbit.com/" . strtolower($companyName) . ".com";
-          } else {
-          // Fallback placeholder
-          $logoPath = 'https://placehold.co/50x50?text=' . urlencode($companyName);
-          }
-          @endphp
-
-          <div class="trade-item d-flex justify-content-between align-items-center">
-            <div>
-              <img src="{{ $logoPath }}" alt="{{ $companyName }}" width="30"
-                onerror="this.src='https://placehold.co/50x50?text=NA'">
-              <span>BUY {{ number_format($trade->amount, 4) }} {{ $companyName }}</span><br>
-              <small>{{ $trade->asset }}</small>
+            <div class="col-6">
+              <a href="{{ route('user.copy.trader.page') }}" class="btn btn-outline-primary w-100">Copy
+                Trade</a>
             </div>
-            <span class="text-danger">${{ number_format($trade->take_profit, 2) }}</span>
           </div>
-          @endforeach
-          @endif
+
         </div>
+        <!-- Profile Tabs -->
+        <ul class="nav nav-tabs d-flex flex-sm-row justify-content-between mt-3">
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#closed">
+              <i class="bi bi-hourglass-top"></i> Closed
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#active">
+              <i class="bi bi-hourglass"></i> Active
+            </a>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content mt-3">
+          <!-- Active Trades -->
+          <div class="tab-pane fade show active" id="active">
+            @if ($open_trades->isEmpty())
+            <div class="text-center py-4">
+              <p>No open trades available.</p>
+            </div>
+            @else
+            @foreach ($open_trades as $trade)
+            @php
+            // Capitalize company name
+            // Convert company name to uppercase
+            $companyName = strtoupper($trade->company);
+
+
+            // Determine logo URL dynamically
+            $logoBaseUrl = 'https://cryptologos.cc/logos/';
+            $logoPath = '';
+
+            // Check company type (crypto, stocks, or default)
+            if (in_array($companyName, ['Bitcoin', 'Ethereum', 'Ripple', 'Litecoin', 'Cardano', 'Dogecoin'])) {
+            // Replace spaces and lowercase for crypto logos
+            $logoPath = $logoBaseUrl . strtolower(str_replace(' ', '-', $companyName)) . '-logo.png';
+            } elseif (in_array($companyName, ['Amazon', 'Apple', 'Tesla', 'Microsoft', 'Google'])) {
+            // Use stock logos from external resources (example URL)
+            $logoPath = "https://logo.clearbit.com/" . strtolower($companyName) . ".com";
+            } else {
+            // Fallback placeholder
+            $logoPath = 'https://placehold.co/50x50?text=' . urlencode($companyName);
+            }
+            @endphp
+
+            <div class="trade-item d-flex justify-content-between align-items-center">
+              <div>
+                <img src="{{ $logoPath }}" alt="{{ $companyName }}" width="30"
+                  onerror="this.src='https://placehold.co/50x50?text=NA'">
+                <span>BUY {{ number_format($trade->amount, 4) }} {{ $companyName }}</span><br>
+                <small>{{ $trade->asset }}</small>
+              </div>
+              <span class="text-success">${{ number_format($trade->take_profit, 2) }}</span>
+            </div>
+            @endforeach
+            @endif
+          </div>
+
+          <!-- Closed Trades -->
+          <div class="tab-pane fade" id="closed">
+            @if ($closed_trades->isEmpty())
+            <div class="text-center py-4">
+              <p>No closed trades available.</p>
+            </div>
+            @else
+            @foreach ($closed_trades as $trade)
+            @php
+            // Capitalize company name
+            // Convert company name to uppercase
+            $companyName = strtoupper($trade->company);
+
+            // Determine logo URL dynamically
+            $logoBaseUrl = 'https://cryptologos.cc/logos/';
+            $logoPath = '';
+
+            // Check company type (crypto, stocks, or default)
+            if (in_array($companyName, ['Bitcoin', 'Ethereum', 'Ripple', 'Litecoin', 'Cardano', 'Dogecoin'])) {
+            // Replace spaces and lowercase for crypto logos
+            $logoPath = $logoBaseUrl . strtolower(str_replace(' ', '-', $companyName)) . '-logo.png';
+            } elseif (in_array($companyName, ['Amazon', 'Apple', 'Tesla', 'Microsoft', 'Google'])) {
+            // Use stock logos from external resources (example URL)
+            $logoPath = "https://logo.clearbit.com/" . strtolower($companyName) . ".com";
+            } else {
+            // Fallback placeholder
+            $logoPath = 'https://placehold.co/50x50?text=' . urlencode($companyName);
+            }
+            @endphp
+
+            <div class="trade-item d-flex justify-content-between align-items-center">
+              <div>
+                <img src="{{ $logoPath }}" alt="{{ $companyName }}" width="30"
+                  onerror="this.src='https://placehold.co/50x50?text=NA'">
+                <span>BUY {{ number_format($trade->amount, 4) }} {{ $companyName }}</span><br>
+                <small>{{ $trade->asset }}</small>
+              </div>
+              <span class="text-danger">${{ number_format($trade->take_profit, 2) }}</span>
+            </div>
+            @endforeach
+            @endif
+          </div>
+        </div>
+
+        <!-- Custom CSS -->
+        <style>
+          .trade-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+          }
+
+          .text-success {
+            color: #00FF00;
+            font-weight: bold;
+          }
+
+          .text-danger {
+            color: #FF0000;
+            font-weight: bold;
+          }
+
+          small {
+            color: #999;
+          }
+
+          img {
+            border-radius: 50%;
+          }
+        </style>
+
+
+
+
       </div>
-
-      <!-- Custom CSS -->
-      <style>
-        .trade-item {
-          border-bottom: 1px solid #ccc;
-          padding: 10px 0;
-        }
-
-        .text-success {
-          color: #00FF00;
-          font-weight: bold;
-        }
-
-        .text-danger {
-          color: #FF0000;
-          font-weight: bold;
-        }
-
-        small {
-          color: #999;
-        }
-
-        img {
-          border-radius: 50%;
-        }
-      </style>
-
-
 
 
     </div>
-
+    <!-- end row -->
 
   </div>
-  <!-- end row -->
+  <!-- container -->
 
-</div>
-<!-- container -->
-
-@include('dashboard.footer')
-<script>
-  function toggleTradeStatus(status) {
+  @include('dashboard.footer')
+  <script>
+    function toggleTradeStatus(status) {
         if (status === 'open') {
             document.getElementById('openTrades').style.display = 'block';
             document.getElementById('closedTrades').style.display = 'none';
@@ -458,4 +330,4 @@
             document.getElementById('closedTrades').style.display = 'block';
         }
     }
-</script>
+  </script>

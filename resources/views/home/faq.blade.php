@@ -146,7 +146,8 @@
                             </a>
 
                             <div class="accordion-content">
-                                <p>The minimum amount for withdrawal is 1 USD.</p>
+                                <p>You can withdraw any amount.</p>
+
                             </div>
                         </li>
 

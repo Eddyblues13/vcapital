@@ -39,6 +39,8 @@ class AdminController extends Controller
         // Sum of account balance
         $data['balance_sum'] = AccountBalance::sum('amount');
 
+
+
         // Sum of pending deposits
         $data['pending_deposits_sum'] = Deposit::where('status', 'pending')->sum('amount');
 
@@ -964,6 +966,12 @@ class AdminController extends Controller
             ->where('status', 'close')
             ->get();
 
+        // Fetching the user's KYC status
+        $data['kyc_status'] = Document::where('user_id', $user->id)->pluck('status')->first();
+
+        // Check if the status is 1, meaning KYC is approved
+        $data['kyc_required'] = $data['kyc_status'] != 1;
+
 
         // Redirect to the user's home page with the relevant data
         return view('dashboard.home', $data)->with('message', 'You are logged in as ' . $user->first_name . ' ' . $user->last_name);
@@ -1056,7 +1064,7 @@ class AdminController extends Controller
 
         return redirect()->back()->with('error', 'User not found.');
     }
- 
+
 
     public function addTradePage()
     {

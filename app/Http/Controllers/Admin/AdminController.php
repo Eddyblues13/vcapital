@@ -174,7 +174,7 @@ class AdminController extends Controller
     {
 
         $user  = Document::where('user_id', $id)->first();
-        $user->status = 2;
+        $user->status = 0;
         $user->save();
         return back()->with('message', 'Kyc Rejected Successfully');;
     }

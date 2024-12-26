@@ -272,6 +272,13 @@
                                 </a>
                             </li>
 
+                            <li class="nav-item">
+                                <a href="{{route('manage.kyc.page')}}">
+                                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                    <p>Manage KYC</p>
+                                </a>
+                            </li>
+
                             <li class="nav-item   ">
                                 <a href="{{route('manage.deposits.page')}}">
                                     <i class="fa fa-download" aria-hidden="true"></i>

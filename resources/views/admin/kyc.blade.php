@@ -46,10 +46,10 @@
 										<a href="#" data-toggle="modal" data-target="#viewkycPModal{{$kyc->id}}"
 											class="btn btn-light btn-sm"><i class="fa fa-eye"></i> Passport</a>
 
-										<a href="{{url('accept-kyc/'.$kyc->id)}}"
+										<a href="{{url('admin/accept-kyc/'.$kyc->id)}}"
 											class="btn btn-primary btn-sm">Accept</a>
 
-										<a href="{{url('reject-kyc/'.$kyc->id)}}"
+										<a href="{{url('admin/reject-kyc/'.$kyc->id)}}"
 											class="btn btn-danger btn-sm">Reject</a>
 									</td>
 								</tr>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\TradingPlan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -30,7 +31,11 @@ Route::get('/about-us', function () {
 });
 
 Route::get('/plan', function () {
-    return view('home.plan');
+    // Fetch all trading plans from the database
+    $plans = TradingPlan::all();
+
+    // Return the view and pass the data to it
+    return view('home.plan', compact('plans'));
 });
 
 Route::get('/faqs', function () {
@@ -49,9 +54,6 @@ Route::get('/contact', function () {
     return view('home.contact');
 });
 
-Route::get('/plan', function () {
-    return view('home.plan');
-});
 
 Auth::routes();
 

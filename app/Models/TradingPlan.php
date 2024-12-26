@@ -9,4 +9,4 @@ class TradingPlan extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'min_amount', 'max_amount', 'duration'];
-}
+} 

@@ -33,34 +33,30 @@
 
 
 
+            @foreach($plans as $plan)
             <div class="col-lg-4 col-sm-6">
                 <div class="single-pricing" style="border:2px solid #0e0129">
                     <div class="pricing-content" style="background-color:#0e0129;">
-                        <h3 style="color:white">Executive</h3>
-                        <h1>5 % Daily </h1>
+                        <h3 style="color:white">{{ $plan->name }}</h3>
+
                     </div>
 
                     <ul>
                         <li>
                             <i class="bx bx-check"></i>
-                            Duration - Three months
+                            Duration - {{ $plan->duration }}
                         </li>
                         <li>
                             <i class="bx bx-check"></i>
-                            Minimum Deposit - <b>$10000</b>
+                            Minimum Deposit - <b>${{ number_format($plan->min_amount, 2) }}</b>
                         </li>
                         <li>
                             <i class="bx bx-check"></i>
-                            Maximum Deposit - <b>$49999</b>
+                            Maximum Deposit - <b>${{ number_format($plan->max_amount, 2) }}</b>
                         </li>
                         <li>
                             <i class="bx bx-check"></i>
                             Withdrawal - <b>Instant</b>
-
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Loan Limit - <b>$ 5000</b>
                         </li>
 
                         <li>
@@ -68,313 +64,12 @@
                             <b>24/7 Customer Support</b>
                         </li>
                     </ul>
-                    <a href="{{route('register')}}" class="default-btn">Invest Now</a>
+                    <a href="{{ route('register') }}" class="default-btn">Invest Now</a>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-pricing" style="border:2px solid #0e0129">
-                    <div class="pricing-content" style="background-color:#0e0129;">
-                        <h3 style="color:white">Deluxe</h3>
-                        <h1>3 % Daily </h1>
-                    </div>
+            @endforeach
 
-                    <ul>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Duration - One month
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Minimum Deposit - <b>$5000</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Maximum Deposit - <b>$9999</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Withdrawal - <b>Instant</b>
 
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Loan Limit - <b>$ 3000</b>
-                        </li>
-
-                        <li>
-                            <i class="bx bx-check"></i>
-                            <b>24/7 Customer Support</b>
-                        </li>
-                    </ul>
-                    <a href="{{route('register')}}" class="default-btn">Invest Now</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-pricing" style="border:2px solid #0e0129">
-                    <div class="pricing-content" style="background-color:#0e0129;">
-                        <h3 style="color:white">Telsa</h3>
-                        <h1>60 % Daily </h1>
-                    </div>
-
-                    <ul>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Duration - One week
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Minimum Deposit - <b>$30</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Maximum Deposit - <b>$300</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Withdrawal - <b>Instant</b>
-
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Loan Limit - <b>$ </b>
-                        </li>
-
-                        <li>
-                            <i class="bx bx-check"></i>
-                            <b>24/7 Customer Support</b>
-                        </li>
-                    </ul>
-                    <a href="{{route('register')}}" class="default-btn">Invest Now</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-pricing" style="border:2px solid #0e0129">
-                    <div class="pricing-content" style="background-color:#0e0129;">
-                        <h3 style="color:white">Tweta</h3>
-                        <h1>60 % Monthly </h1>
-                    </div>
-
-                    <ul>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Duration - One month
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Minimum Deposit - <b>$40</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Maximum Deposit - <b>$50</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Withdrawal - <b>Instant</b>
-
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Loan Limit - <b>$ </b>
-                        </li>
-
-                        <li>
-                            <i class="bx bx-check"></i>
-                            <b>24/7 Customer Support</b>
-                        </li>
-                    </ul>
-                    <a href="{{route('register')}}" class="default-btn">Invest Now</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-pricing" style="border:2px solid #0e0129">
-                    <div class="pricing-content" style="background-color:#0e0129;">
-                        <h3 style="color:white">DIAMOND</h3>
-                        <h1>8 % Daily </h1>
-                    </div>
-
-                    <ul>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Duration - Six months
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Minimum Deposit - <b>$50000</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Maximum Deposit - <b>$5000000</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Withdrawal - <b>Instant</b>
-
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Loan Limit - <b>$ </b>
-                        </li>
-
-                        <li>
-                            <i class="bx bx-check"></i>
-                            <b>24/7 Customer Support</b>
-                        </li>
-                    </ul>
-                    <a href="{{route('register')}}" class="default-btn">Invest Now</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-pricing" style="border:2px solid #0e0129">
-                    <div class="pricing-content" style="background-color:#0e0129;">
-                        <h3 style="color:white">LIFE PLAN</h3>
-                        <h1>234 % Hourly </h1>
-                    </div>
-
-                    <ul>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Duration - One year
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Minimum Deposit - <b>$50000</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Maximum Deposit - <b>$50000000</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Withdrawal - <b>Instant</b>
-
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Loan Limit - <b>$ </b>
-                        </li>
-
-                        <li>
-                            <i class="bx bx-check"></i>
-                            <b>24/7 Customer Support</b>
-                        </li>
-                    </ul>
-                    <a href="{{route('register')}}" class="default-btn">Invest Now</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-pricing" style="border:2px solid #0e0129">
-                    <div class="pricing-content" style="background-color:#0e0129;">
-                        <h3 style="color:white">JOINT PLAN (II)</h3>
-                        <h1>35 % Hourly </h1>
-                    </div>
-
-                    <ul>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Duration - two years
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Minimum Deposit - <b>$30000</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Maximum Deposit - <b>$5000000</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Withdrawal - <b>Instant</b>
-
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Loan Limit - <b>$ </b>
-                        </li>
-
-                        <li>
-                            <i class="bx bx-check"></i>
-                            <b>24/7 Customer Support</b>
-                        </li>
-                    </ul>
-                    <a href="{{route('register')}}" class="default-btn">Invest Now</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-pricing" style="border:2px solid #0e0129">
-                    <div class="pricing-content" style="background-color:#0e0129;">
-                        <h3 style="color:white">JOINT PLAN</h3>
-                        <h1>801 % Daily </h1>
-                    </div>
-
-                    <ul>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Duration - Five Years
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Minimum Deposit - <b>$350000</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Maximum Deposit - <b>$50000000</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Withdrawal - <b>Instant</b>
-
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Loan Limit - <b>$ </b>
-                        </li>
-
-                        <li>
-                            <i class="bx bx-check"></i>
-                            <b>24/7 Customer Support</b>
-                        </li>
-                    </ul>
-                    <a href="{{route('register')}}" class="default-btn">Invest Now</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-pricing" style="border:2px solid #0e0129">
-                    <div class="pricing-content" style="background-color:#0e0129;">
-                        <h3 style="color:white">VIP PLAN</h3>
-                        <h1>812 % Daily </h1>
-                    </div>
-
-                    <ul>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Duration - One month
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Minimum Deposit - <b>$10000</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Maximum Deposit - <b>$100000</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Withdrawal - <b>Instant</b>
-
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Loan Limit - <b>$ </b>
-                        </li>
-
-                        <li>
-                            <i class="bx bx-check"></i>
-                            <b>24/7 Customer Support</b>
-                        </li>
-                    </ul>
-                    <a href="{{route('register')}}" class="default-btn">Invest Now</a>
-                </div>
-            </div>
 
 
 

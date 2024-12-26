@@ -51,7 +51,11 @@ class HomeController extends Controller
     {
         $data['deposits'] = Deposit::where('user_id', Auth::id())->get();
 
+        // Fetching the user's KYC status
         $data['kyc_status'] = Document::where('user_id', Auth::id())->pluck('status')->first();
+
+        // Check if the status is 1, meaning KYC is approved
+        $data['kyc_required'] = $data['kyc_status'] != 1;
 
         // Sum of pending deposits
         $data['pending_deposits_sum'] = Deposit::where('user_id', Auth::id())

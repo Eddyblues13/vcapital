@@ -88,12 +88,24 @@
     <!-- Start Content-->
     <div class="container-fluid">
 
+      @if ($kyc_required)
       <div class="small-card card widget-flat my-4 kyc-warning">
-
-        <p class="text-center">you have an important task left ! Verify your account to use all Vault Capital
-          service <a class="btn btn-danger" href="{{ route('user.kyc.form') }}">Verify Account</a>
+        <p class="text-center">
+          You have an important task left! Verify your account to use all Vault Capital services.
+          <a class="btn btn-danger" href="{{ route('user.kyc.form') }}">Verify Account</a>
         </p>
       </div>
+      @else
+      <div class="small-card card widget-flat my-4 kyc-verified">
+        <p class="text-center">
+          <span class="text-success">
+            <i class="fas fa-check-circle"></i> Your account is <strong>Verified</strong>!
+          </span>
+        </p>
+      </div>
+      @endif
+
+
 
 
       <!-- Trading Card -->
@@ -160,24 +172,46 @@
       </div>
 
 
+
+
       <!-- TradingView Widget -->
       <div class="small-card card widget-flat my-4">
+        <div class="row g-2">
+          <div class="col-6">
+
+            <div class="dropdown">
+              <button class="btn btn-outline-primary w-100 dropdown-toggle mb-3" type="button" id="buyCryptoButton"
+                data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 14px; padding: 10px 20px;">
+                Buy Crypto
+              </button>
+
+              <ul class="dropdown-menu" aria-labelledby="buyCryptoButton">
+                <li><a class="dropdown-item" href="https://www.binance.com/" target="_blank">Binance</a>
+                </li>
+                <li><a class="dropdown-item" href="https://www.coinbase.com/" target="_blank">Coinbase</a>
+                </li>
+                <li><a class="dropdown-item" href="https://www.kraken.com/" target="_blank">Kraken</a></li>
+                <li><a class="dropdown-item" href="https://www.crypto.com/" target="_blank">Crypto.com</a>
+                </li>
+                <li><a class="dropdown-item" href="https://www.bitfinex.com/" target="_blank">Bitfinex</a>
+                </li>
+              </ul>
 
 
-        <!-- TradingView Widget -->
-        <div class="small-card card widget-flat my-4">
-          <div class="row g-2">
-            <div class="col-6">
-              <a href="{{ route('user.stocks.page') }}" class="btn btn-outline-primary w-100">Buy Stock</a>
-            </div>
-            <div class="col-6">
-              <a href="{{ route('user.copy.trader.page') }}" class="btn btn-outline-primary w-100">Copy
-                Trade</a>
+
             </div>
           </div>
-
+          <div class="col-6">
+            <a href="{{ route('user.copy.trader.page') }}" class="btn btn-outline-primary w-100">Copy
+              Trade</a>
+          </div>
         </div>
-        <!-- Profile Tabs -->
+
+      </div>
+      <!-- Profile Tabs -->
+
+      <!-- TradingView Widget -->
+      <div class="small-card card widget-flat my-4">
         <ul class="nav nav-tabs d-flex flex-sm-row justify-content-between mt-3">
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" href="#closed">
@@ -280,48 +314,49 @@
             @endif
           </div>
         </div>
-
-        <!-- Custom CSS -->
-        <style>
-          .trade-item {
-            border-bottom: 1px solid #ccc;
-            padding: 10px 0;
-          }
-
-          .text-success {
-            color: #00FF00;
-            font-weight: bold;
-          }
-
-          .text-danger {
-            color: #FF0000;
-            font-weight: bold;
-          }
-
-          small {
-            color: #999;
-          }
-
-          img {
-            border-radius: 50%;
-          }
-        </style>
-
-
-
-
       </div>
+
+      <!-- Custom CSS -->
+      <style>
+        .trade-item {
+          border-bottom: 1px solid #ccc;
+          padding: 10px 0;
+        }
+
+        .text-success {
+          color: #00FF00;
+          font-weight: bold;
+        }
+
+        .text-danger {
+          color: #FF0000;
+          font-weight: bold;
+        }
+
+        small {
+          color: #999;
+        }
+
+        img {
+          border-radius: 50%;
+        }
+      </style>
+
+
 
 
     </div>
-    <!-- end row -->
+
 
   </div>
-  <!-- container -->
+  <!-- end row -->
 
-  @include('dashboard.footer')
-  <script>
-    function toggleTradeStatus(status) {
+</div>
+<!-- container -->
+
+@include('dashboard.footer')
+<script>
+  function toggleTradeStatus(status) {
         if (status === 'open') {
             document.getElementById('openTrades').style.display = 'block';
             document.getElementById('closedTrades').style.display = 'none';
@@ -330,4 +365,4 @@
             document.getElementById('closedTrades').style.display = 'block';
         }
     }
-  </script>
+</script>

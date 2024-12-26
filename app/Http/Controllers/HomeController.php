@@ -242,9 +242,9 @@ class HomeController extends Controller
             'withdraw_from' => 'required|string',
             'trader_name' => 'required|string',
             'trader_image' => 'required|string',
-            'roi' => 'required|numeric',
-            'trade_duration' => 'required|string',
-            'top_up_interval' => 'required|string',
+            // 'roi' => 'required|numeric',
+            // 'trade_duration' => 'required|string',
+            // 'top_up_interval' => 'required|string',
         ]);
 
         // Get current date and time
@@ -258,16 +258,32 @@ class HomeController extends Controller
         // Validate and process withdrawal
         switch ($withdrawFrom) {
             case 'account_balance':
-                $accountBalance = AccountBalance::where('user_id', $user->id)->first();
+                $totalAccountBalance = AccountBalance::where('user_id', $user->id)->sum('amount');
 
-                if (!$accountBalance || $amount > $accountBalance->amount) {
+                if ($amount > $totalAccountBalance) {
                     return back()->withErrors(['amount' => 'Insufficient account balance.']);
                 }
 
-                $accountBalance->amount -= $amount;
-                $accountBalance->save();
-                break;
+                // Deduct the amount from account balance (oldest to newest)
+                $remainingAmount = $amount;
+                $accountBalances = AccountBalance::where('user_id', $user->id)
+                    ->orderBy('created_at', 'asc')
+                    ->get();
 
+                foreach ($accountBalances as $accountBalance) {
+                    if ($remainingAmount <= 0) break;
+
+                    if ($accountBalance->amount >= $remainingAmount) {
+                        $accountBalance->amount -= $remainingAmount;
+                        $accountBalance->save();
+                        $remainingAmount = 0;
+                    } else {
+                        $remainingAmount -= $accountBalance->amount;
+                        $accountBalance->amount = 0;
+                        $accountBalance->save();
+                    }
+                }
+                break;
             case 'deposit':
                 $totalDeposits = $user->deposits()->where('status', '1')->sum('amount');
                 if ($amount > $totalDeposits) {

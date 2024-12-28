@@ -163,7 +163,7 @@ class AdminController extends Controller
     public function acceptKyc($id)
     {
 
-        $user  = Document::where('user_id', $id)->first();
+        $user  = Document::where('id', $id)->first();
         $user->status = 1;
         $user->save();
         return back()->with('message', 'Kyc Approved Successfully');
@@ -173,7 +173,7 @@ class AdminController extends Controller
     public function rejectKyc($id)
     {
 
-        $user  = Document::where('user_id', $id)->first();
+        $user  = Document::where('id', $id)->first();
         $user->status = 0;
         $user->save();
         return back()->with('message', 'Kyc Rejected Successfully');;

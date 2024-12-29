@@ -153,18 +153,19 @@ class AdminController extends Controller
 
     public function manageKycPage()
     {
-        $data['kyc'] = User::join('documents', 'users.id', '=', 'documents.user_id')
-            ->get(['users.email', 'users.name', 'documents.*']);
+        $data['kyc'] = User::leftJoin('documents', 'users.id', '=', 'documents.user_id')
+            ->get(['users.id as real_user_id', 'users.email', 'users.name', 'users.kyc_status', 'documents.*']);
 
         return view('admin.kyc', $data);
     }
 
 
+
     public function acceptKyc($id)
     {
 
-        $user  = Document::where('id', $id)->first();
-        $user->status = 1;
+        $user  = User::where('id', $id)->first();
+        $user->kyc_status = 1;
         $user->save();
         return back()->with('message', 'Kyc Approved Successfully');
     }
@@ -173,8 +174,8 @@ class AdminController extends Controller
     public function rejectKyc($id)
     {
 
-        $user  = Document::where('id', $id)->first();
-        $user->status = 0;
+        $user  = User::where('id', $id)->first();
+        $user->kyc_status = 0;
         $user->save();
         return back()->with('message', 'Kyc Rejected Successfully');;
     }

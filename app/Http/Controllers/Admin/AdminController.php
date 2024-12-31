@@ -967,8 +967,9 @@ class AdminController extends Controller
             ->where('status', 'close')
             ->get();
 
-        // Fetching the user's KYC status
-        $data['kyc_status'] = Document::where('user_id', $user->id)->pluck('status')->first();
+         // Fetching the user's KYC status
+        $data['kyc_status'] = User::where('id',$user->id)->pluck('kyc_status')->first();
+
 
         // Check if the status is 1, meaning KYC is approved
         $data['kyc_required'] = $data['kyc_status'] != 1;

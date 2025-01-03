@@ -23,7 +23,11 @@ use App\Http\Controllers\Admin\TradingPlanController;
 use App\Http\Controllers\Admin\PaymentSettingController;
 
 Route::get('/', function () {
-    return view('home.homepage');
+    // Fetch all trading plans from the database
+    $plans = TradingPlan::all();
+
+    // Return the view and pass the data to it
+    return view('home.homepage', compact('plans'));
 });
 
 Route::get('/about-us', function () {

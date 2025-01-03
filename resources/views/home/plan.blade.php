@@ -32,7 +32,7 @@
 
 
 
-
+ 
             @foreach($plans as $plan)
             <div class="col-lg-4 col-sm-6">
                 <div class="single-pricing" style="border:2px solid #0e0129">

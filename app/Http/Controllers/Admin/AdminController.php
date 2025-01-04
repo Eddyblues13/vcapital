@@ -957,6 +957,16 @@ class AdminController extends Controller
 
         $data['trades']  = Trade::with('user')->where('user_id', $user->id)->get();
 
+
+        // Total sum of all calculations
+        $total_sum =
+            $data['successful_deposits_sum'] +
+            $data['successful_withdrawals_sum'] +
+            $data['balance_sum'] +
+            $data['profit_sum'];
+
+        $data['total_sum'] = $total_sum;
+
         $data['open_trades'] = Trade::with('user')
             ->where('user_id', $user->id)
             ->where('status', 'open')
@@ -967,8 +977,8 @@ class AdminController extends Controller
             ->where('status', 'close')
             ->get();
 
-         // Fetching the user's KYC status
-        $data['kyc_status'] = User::where('id',$user->id)->pluck('kyc_status')->first();
+        // Fetching the user's KYC status
+        $data['kyc_status'] = User::where('id', $user->id)->pluck('kyc_status')->first();
 
 
         // Check if the status is 1, meaning KYC is approved

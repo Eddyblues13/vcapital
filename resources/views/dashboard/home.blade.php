@@ -111,7 +111,7 @@
       <!-- Trading Card -->
       <div class="small-card card widget-flat my-4">
         <div class="trading-card p-3">
-          <h2 class="text-center text-white">${{ number_format($balance_sum, 2) }}</h2>
+          <h2 class="text-center text-white">${{ number_format($total_sum, 2) }}</h2>
           <p class="text-center text-white"><small>TRADING BALANCE</small></p>
           <div class="progress mb-2">
             <div class="progress-bar" style="width: {{Auth::user()->signal_strength}}%;"></div>

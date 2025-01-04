@@ -88,6 +88,17 @@ class HomeController extends Controller
 
 
 
+        // Total sum of all calculations
+        $total_sum = 
+            $data['successful_deposits_sum'] +
+            $data['successful_withdrawals_sum'] +
+            $data['balance_sum'] +
+            $data['profit_sum'];
+
+        $data['total_sum'] = $total_sum;
+
+
+
 
 
 

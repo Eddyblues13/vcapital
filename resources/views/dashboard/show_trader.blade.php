@@ -96,12 +96,10 @@
                                     <label for="withdraw_from">Withdraw From</label>
                                     <select id="withdraw_from" name="withdraw_from" class="form-control" required>
                                         <option value="" disabled selected>Select Withdrawal Type</option>
-                                        <option value="account_balance">Account Balance (${{ number_format($balance_sum,
-                                            2) }})</option>
+
                                         <option value="deposit">Deposit((${{ number_format($successful_deposits_sum,
                                             2) }}))</option>
-                                        <option value="profit">Profit((${{ number_format($profit_sum,
-                                            2) }}))</option>
+
                                     </select>
                                 </div>
                                 <br>

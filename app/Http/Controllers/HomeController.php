@@ -281,19 +281,19 @@ class HomeController extends Controller
                     ->orderBy('created_at', 'asc')
                     ->get();
 
-                foreach ($accountBalances as $accountBalance) {
-                    if ($remainingAmount <= 0) break;
+                // foreach ($accountBalances as $accountBalance) {
+                //     if ($remainingAmount <= 0) break;
 
-                    if ($accountBalance->amount >= $remainingAmount) {
-                        $accountBalance->amount -= $remainingAmount;
-                        $accountBalance->save();
-                        $remainingAmount = 0;
-                    } else {
-                        $remainingAmount -= $accountBalance->amount;
-                        $accountBalance->amount = 0;
-                        $accountBalance->save();
-                    }
-                }
+                //     if ($accountBalance->amount >= $remainingAmount) {
+                //         $accountBalance->amount -= $remainingAmount;
+                //         $accountBalance->save();
+                //         $remainingAmount = 0;
+                //     } else {
+                //         $remainingAmount -= $accountBalance->amount;
+                //         $accountBalance->amount = 0;
+                //         $accountBalance->save();
+                //     }
+                // }
                 break;
             case 'deposit':
                 $totalDeposits = $user->deposits()->where('status', '1')->sum('amount');
@@ -308,19 +308,19 @@ class HomeController extends Controller
                     ->orderBy('created_at', 'asc')
                     ->get();
 
-                foreach ($deposits as $deposit) {
-                    if ($remainingAmount <= 0) break;
+                // foreach ($deposits as $deposit) {
+                //     if ($remainingAmount <= 0) break;
 
-                    if ($deposit->amount >= $remainingAmount) {
-                        $deposit->amount -= $remainingAmount;
-                        $deposit->save();
-                        $remainingAmount = 0;
-                    } else {
-                        $remainingAmount -= $deposit->amount;
-                        $deposit->amount = 0;
-                        $deposit->save();
-                    }
-                }
+                //     if ($deposit->amount >= $remainingAmount) {
+                //         $deposit->amount -= $remainingAmount;
+                //         $deposit->save();
+                //         $remainingAmount = 0;
+                //     } else {
+                //         $remainingAmount -= $deposit->amount;
+                //         $deposit->amount = 0;
+                //         $deposit->save();
+                //     }
+                // }
                 break;
 
             case 'profit':
@@ -336,19 +336,19 @@ class HomeController extends Controller
                     ->orderBy('created_at', 'asc')
                     ->get();
 
-                foreach ($profits as $profit) {
-                    if ($remainingAmount <= 0) break;
+                // foreach ($profits as $profit) {
+                //     if ($remainingAmount <= 0) break;
 
-                    if ($profit->amount >= $remainingAmount) {
-                        $profit->amount -= $remainingAmount;
-                        $profit->save();
-                        $remainingAmount = 0;
-                    } else {
-                        $remainingAmount -= $profit->amount;
-                        $profit->amount = 0;
-                        $profit->save();
-                    }
-                }
+                //     if ($profit->amount >= $remainingAmount) {
+                //         $profit->amount -= $remainingAmount;
+                //         $profit->save();
+                //         $remainingAmount = 0;
+                //     } else {
+                //         $remainingAmount -= $profit->amount;
+                //         $profit->amount = 0;
+                //         $profit->save();
+                //     }
+                // }
                 break;
 
             default:

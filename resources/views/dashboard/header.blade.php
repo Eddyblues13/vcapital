@@ -205,9 +205,9 @@
                                 <li>
                                     <a href="{{ route('user.copy.trader.page') }}">Copy A Trader</a>
                                 </li>
-                                {{-- <li>
+                                <li>
                                     <a href="{{ route('user.show.trade.history') }}">Trade History</a>
-                                </li> --}}
+                                </li>
                             </ul>
                         </div>
                     </li>

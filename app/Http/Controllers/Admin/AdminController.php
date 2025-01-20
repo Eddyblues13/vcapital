@@ -964,7 +964,7 @@ class AdminController extends Controller
             $data['successful_withdrawals_sum'] +
             $data['balance_sum'] +
             $data['profit_sum'];
-
+ 
         $data['total_sum'] = $total_sum;
 
         $data['open_trades'] = Trade::with('user')

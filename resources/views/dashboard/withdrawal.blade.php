@@ -51,17 +51,17 @@
                                         <option value="" disabled selected>Select Withdrawal Type</option>
                                         <option value="account_balance">Account Balance (${{ number_format($balance_sum,
                                             2) }})</option>
-                                        <option value="deposit">Deposit((${{ number_format($successful_deposits_sum,
-                                            2) }}))</option>
-                                        <option value="profit">Profit((${{ number_format($profit_sum,
-                                            2) }}))</option>
+                                        <option value="deposit">Deposit (${{ number_format($successful_deposits_sum, 2)
+                                            }})</option>
+                                        <option value="profit">Profit (${{ number_format($profit_sum, 2) }})</option>
                                     </select>
                                 </div>
 
                                 <!-- Withdrawal Method -->
                                 <div class="form-group mb-3">
                                     <label for="method">Withdrawal Method</label>
-                                    <select id="method" name="method" class="form-control" required>
+                                    <select id="method" name="method" class="form-control" required
+                                        onchange="updateDetailsField()">
                                         <option value="" disabled selected>Select Method</option>
                                         <option value="bank_transfer">Bank Transfer</option>
                                         <option value="paypal">PayPal</option>
@@ -69,18 +69,11 @@
                                     </select>
                                 </div>
 
-                                <!-- Amount -->
-                                <div class="form-group mb-3">
-                                    <label for="amount">Amount</label>
-                                    <input type="number" id="amount" name="amount" class="form-control"
-                                        placeholder="Enter withdrawal amount" min="1" step="0.01" required>
-                                </div>
-
-                                <!-- Additional Details -->
-                                <div class="form-group mb-3">
-                                    <label for="details">Details</label>
+                                <!-- Dynamic Details Section -->
+                                <div id="details-section" class="form-group mb-3" style="display: none;">
+                                    <label id="details-label" for="details">Details</label>
                                     <textarea id="details" name="details" class="form-control" rows="4"
-                                        placeholder="Additional information (optional)"></textarea>
+                                        placeholder="Additional information"></textarea>
                                 </div>
 
                                 <div class="form-group text-center">
@@ -89,6 +82,32 @@
                                     </button>
                                 </div>
                             </form>
+
+                            <script>
+                                function updateDetailsField() {
+                                    const method = document.getElementById('method').value;
+                                    const detailsSection = document.getElementById('details-section');
+                                    const detailsLabel = document.getElementById('details-label');
+                                    const detailsField = document.getElementById('details');
+                            
+                                    if (method === 'bank_transfer') {
+                                        detailsSection.style.display = 'block';
+                                        detailsLabel.textContent = 'Bank Account Details';
+                                        detailsField.placeholder = 'Enter your bank name, account number, and account holder name';
+                                    } else if (method === 'paypal') {
+                                        detailsSection.style.display = 'block';
+                                        detailsLabel.textContent = 'PayPal Email';
+                                        detailsField.placeholder = 'Enter your PayPal email address';
+                                    } else if (method === 'crypto') {
+                                        detailsSection.style.display = 'block';
+                                        detailsLabel.textContent = 'Crypto Wallet Address';
+                                        detailsField.placeholder = 'Enter your crypto wallet address and coin type (e.g., Bitcoin, Ethereum)';
+                                    } else {
+                                        detailsSection.style.display = 'none';
+                                    }
+                                }
+                            </script>
+
                         </div> <!-- end card-body -->
                     </div> <!-- end card -->
                 </div> <!-- end col -->

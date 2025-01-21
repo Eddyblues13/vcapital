@@ -57,7 +57,7 @@
 
                                     <p class="mb-1 text-warning" style="font-family: 'Arial', sans-serif;">
                                         <strong>Total Copied Trades:</strong> <strong>{{ $trader->total_copied_trade
-                                            }}</strong>
+                                            }}</strong> 
                                     </p>
                                     <p class="mb-1 text-success" style="font-family: 'Arial', sans-serif;">
                                         <strong>Profit Share:</strong> <strong>{{ $trader->risk_index }}%</strong>

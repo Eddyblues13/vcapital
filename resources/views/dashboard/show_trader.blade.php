@@ -71,8 +71,8 @@
                                     </p>
                                 </div>
                                 <div class="text-end">
-                                    <p class="mb-1 text-danger" style="font-family: 'Arial', sans-serif;">
-                                        <strong>Risk Index:</strong> <strong>{{ $trader->risk_index }}</strong>
+                                    <p class="mb-1 text-success" style="font-family: 'Arial', sans-serif;">
+                                        <strong>Profit Share:</strong> <strong>{{ $trader->risk_index }}</strong>
                                     </p>
                                     <p class="mb-1 text-success" style="font-family: 'Arial', sans-serif;">
                                         <strong>Active Traders:</strong> <strong>{{ $trader->active_traders }}</strong>
@@ -92,7 +92,7 @@
                                 </div>
                                 <br>
 
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="withdraw_from">Withdraw From</label>
                                     <select id="withdraw_from" name="withdraw_from" class="form-control" required>
                                         <option value="" disabled selected>Select Withdrawal Type</option>
@@ -101,7 +101,17 @@
                                             2) }}))</option>
 
                                     </select>
+                                </div> --}}
+                                <div class="form-group" style="display: none;">
+                                    <label for="withdraw_from">Withdraw From</label>
+                                    <select id="withdraw_from" name="withdraw_from" class="form-control" required>
+                                        <option value="" disabled>Select Withdrawal Type</option>
+                                        <option value="deposit" selected>
+                                            Deposit (${{ number_format($successful_deposits_sum, 2) }})
+                                        </option>
+                                    </select>
                                 </div>
+
                                 <br>
 
                                 <input type="hidden" name="trade_duration" value="{{ $trader->investment_duration }}">

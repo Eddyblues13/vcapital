@@ -89,7 +89,7 @@ class HomeController extends Controller
 
 
         // Total sum of all calculations
-        $total_sum = 
+        $total_sum =
             $data['successful_deposits_sum'] +
             $data['successful_withdrawals_sum'] +
             $data['balance_sum'] +
@@ -250,7 +250,7 @@ class HomeController extends Controller
         // Validate the form input
         $request->validate([
             'amount' => 'required|numeric|min:1',
-            'withdraw_from' => 'required|string',
+            //'withdraw_from' => 'required|string',
             'trader_name' => 'required|string',
             'trader_image' => 'required|string',
             // 'roi' => 'required|numeric',
@@ -297,9 +297,9 @@ class HomeController extends Controller
                 break;
             case 'deposit':
                 $totalDeposits = $user->deposits()->where('status', '1')->sum('amount');
-                if ($amount > $totalDeposits) {
-                    return back()->withErrors(['amount' => 'Insufficient deposit balance.']);
-                }
+                // if ($amount > $totalDeposits) {
+                //     return back()->withErrors(['amount' => 'Insufficient deposit balance.']);
+                // }
 
                 // Deduct the amount from deposits (oldest to newest)
                 $remainingAmount = $amount;

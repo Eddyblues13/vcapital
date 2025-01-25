@@ -12,7 +12,18 @@
     <meta name="bingbot" content="noindex, nofollow">
     <meta name="scam-advisor" content="noindex, nofollow">
     <!-- App favicon -->
+    <link rel="shortcut icon" href="{{asset('asset/images/favicon.ico')}}">
+    <meta name="description"
+        content="Vault Capital Limited is a recognized leader in online Cryptocurrency trading and stock Market exchange with years of experience and a global presence. Our platform has everything you need to become an effective trader.">
 
+    <!-- Open Graph tags for better social sharing -->
+    <meta property="og:site_name" content="Vault Capital Limited" />
+    <meta property="og:title" content="Welcome to Vault Capital and Investment Limited" />
+    <meta property="og:description"
+        content="Vault Capital Limited is a recognized leader in online Cryptocurrency trading and stock Market exchange with years of experience and a global presence. Our platform has everything you need to become an effective trader." />
+    <meta property="og:image" content="{{ asset('assets/img/social_image.jpg') }}" /> <!-- Update the image path -->
+    <meta property="og:url" content="{{ url('/') }}" /> <!-- Correct the URL -->
+    <meta property="og:type" content="article" />
     <meta name="theme-color" content="#ffffff">
 
     <!-- Stylesheets -->

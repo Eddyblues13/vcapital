@@ -377,105 +377,137 @@
 <!-- End Solutions Area -->
 
 
-<!-- Start Client Area -->
-<section class="approach-area pb-100">
+
+<!-- Company Section -->
+<section class="company py-4">
     <div class="container">
-        <div class="section-title">
-            <h2>Legal Company</h2>
-
-        </div>
-        <div class="row align-items-center">
-
-
-            <div class="col-lg-6">
-                <div class="approach-content">
-                    <h2>Vault Capital</h2>
-                    <p>is officially registered in the United Kingdom Company House With registration number
-                        11498630,
-                        Suite 2a Blackthorn House, St. Pauls Square, Birmingham, United Kingdom, B3 1RL
-                    </p>
-
-
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="approach-img">
-                    <img src="cert.jpg" alt="Image"><br>
-                    <br>
-                    <center>
-                        <a href="https://find-and-update.company-information.service.gov.uk/company/13828662">Verify
-                            Certificate</a>
-                    </center>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- TradingView Widget BEGIN -->
-    <div class="tradingview-widget-container">
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-            {
-  "width": "100%",
-  "height": 490,
-  "defaultColumn": "overview",
-  "screener_type": "crypto_mkt",
-  "displayCurrency": "USD",
-  "colorTheme": "light",
-  "locale": "en"
-}
-        </script>
-    </div>
-    <!-- TradingView Widget END -->
-</section>
-<section class="pricing-area-page pt-100 pb-70">
-    <div class="container">
-        <div class="section-title">
-            <h2>Our Investment Plans </h2>
-        </div>
-
-        <div class="row">
-            @foreach($plans as $plan)
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-pricing" style="border:2px solid #0e0129">
-                    <div class="pricing-content" style="background-color:#0e0129;">
-                        <h3 style="color:white">{{ $plan->name }}</h3>
-
+        <div class="company-inner mb-3">
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    <div class="company_icons d-flex justify-content-center flex-wrap gap-3 mb-4">
+                        <figure><img src="assets/images/seal1.png" alt="Seal 1" class="img-fluid"></figure>
+                        <figure><img src="assets/images/seal2.png" alt="Seal 2" class="img-fluid"></figure>
+                        <figure><img src="assets/images/seal3.png" alt="Seal 3" class="img-fluid"></figure>
                     </div>
-
-                    <ul>
-                        {{-- <li>
-                            <i class="bx bx-check"></i>
-                            Duration - {{ $plan->duration }}
-                        </li> --}}
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Minimum Deposit - <b>${{ number_format($plan->min_amount, 2) }}</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Maximum Deposit - <b>${{ number_format($plan->max_amount, 2) }}</b>
-                        </li>
-                        <li>
-                            <i class="bx bx-check"></i>
-                            Withdrawal - <b>Instant</b>
-
-                        </li>
-
-
-                        <li>
-                            <i class="bx bx-check"></i>
-                            <b>24/7 Customer Support</b>
-                        </li>
-                    </ul>
-                    <a href="{{route('register')}}" class="default-btn">Invest Now</a>
+                    <div class="company-info">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 mb-3">
+                                <div class="duns-number text-center text-md-start">
+                                    <h2>FDIC Insured</h2>
+                                    <a href="/cert.jpg" target="_blank" class="btn btn-warning mt-2">View
+                                        Certificate</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 mb-3">
+                                <div class="company_info text-center text-md-start">
+                                    <h2>UK registered company: <span>venturecapital.live : <b>#10904385</b></span></h2>
+                                    <a href="/cert.jpg" target="_blank" class="btn btn-warning mt-2">Company
+                                        Information</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 text-center">
+                    <div class="sertificate">
+                        <figure><img src="assets/images/ssl.png" alt="SSL" class="img-fluid"></figure>
+                    </div>
                 </div>
             </div>
-            @endforeach
-
-
         </div>
     </div>
 </section>
+
+<!-- Features Section -->
+<div class="container features-container py-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2 class="mt-3 mb-3">Main <span>features</span> of <span>VENTURE-</span>CAPITAL</h2>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-lg-6 col-md-12 mb-4">
+            <div class="feature">
+                <figure><img src="assets/images/feat1.png" alt="SSL Certificate" class="img-fluid"></figure>
+                <h3>Greenbar SSL Certificate</h3>
+                <p>Your transactions are secured with EV SSL Certificate</p>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 mb-4">
+            <div class="feature">
+                <figure><img src="assets/images/feat2.png" alt="UK Registration" class="img-fluid"></figure>
+                <h3>UK Registered Company</h3>
+                <p>Officially registered company #10904385 in the UK</p>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 mb-4">
+            <div class="feature">
+                <figure><img src="assets/images/feat3.png" alt="DDoS Protection" class="img-fluid"></figure>
+                <h3>DDoS<br>Protection</h3>
+                <p>Highest level DDoS mitigation system for your safety</p>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 mb-4">
+            <div class="feature">
+                <figure><img src="assets/images/feat4.png" alt="Live Support" class="img-fluid"></figure>
+                <h3>Live Chat<br>Support</h3>
+                <p>Quick support available during business hours</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TradingView Widget -->
+<div class="tradingview-widget-container my-5">
+    <div class="tradingview-widget-container__widget"></div>
+    <script src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+        {
+            "width": "100%",
+            "height": 450,
+            "symbolsGroups": [...],
+            "showSymbolLogo": true,
+            "isTransparent": false,
+            "colorTheme": "light",
+            "locale": "en"
+        }
+    </script>
+</div>
+
+<!-- Affiliate Section -->
+<section class="affiliate_area py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="affiliate_text text-center text-lg-start">
+                    <h1 class="mb-3">Earn more by <span>referring</span> new members</h1>
+                    <p>Get paid up to <span>5% referral commission</span></p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 text-center">
+                <div class="affiliate_image">
+                    <figure><img src="assets/images/affiliates.png" alt="Affiliates" class="img-fluid"></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Payment Processors -->
+<section class="statistics py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <div class="payment-processors d-flex justify-content-center flex-wrap gap-3">
+                    <figure><img src="assets/images/p1.png" class="img-fluid mb-3" /></figure>
+                    <figure><img src="assets/images/p2.png" class="img-fluid mb-3" /></figure>
+                    <figure><img src="assets/images/p9.png" class="img-fluid mb-3"></figure>
+                    <figure><img src="assets/images/94.png" class="img-fluid mb-3"></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="client-area ptb-100">
     <div class="container">
         <div class="section-title white-title">

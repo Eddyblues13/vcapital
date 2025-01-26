@@ -9,8 +9,9 @@
     <meta name="googlebot" content="noindex, nofollow">
     <meta name="bingbot" content="noindex, nofollow">
     <meta name="scam-advisor" content="noindex, nofollow">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-    <meta content="Coderthemes" name="author" />
+    <meta name="scam-adviser" content="noindex, nofollow">
+    <meta name="scamadviser" content="noindex, nofollow">
+    <meta name="google" content="noindex, nofollow">
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('asset/images/favicon.ico')}}">

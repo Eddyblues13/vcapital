@@ -10,7 +10,9 @@
     <meta name="googlebot" content="noindex, nofollow">
     <meta name="bingbot" content="noindex, nofollow">
     <meta name="scam-advisor" content="noindex, nofollow">
-    <title>Vault Capital | User Login</title>
+    <meta name="scam-adviser" content="noindex, nofollow">
+    <meta name="scamadviser" content="noindex, nofollow">
+    <meta name="google" content="noindex, nofollow">
 
 
     <link rel="icon" href="account/storage/app/public/photos/uPYDzhfavicon.png1677339254" type="image/png" />

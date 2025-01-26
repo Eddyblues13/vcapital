@@ -11,9 +11,12 @@
     <meta name="googlebot" content="noindex, nofollow">
     <meta name="bingbot" content="noindex, nofollow">
     <meta name="scam-advisor" content="noindex, nofollow">
+    <meta name="scam-adviser" content="noindex, nofollow">
+    <meta name="scamadviser" content="noindex, nofollow">
+    <meta name="google" content="noindex, nofollow">
     <!-- App favicon -->
 
-    <meta name="theme-color" content="#ffffff">
+
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">

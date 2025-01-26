@@ -7,10 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('asset/images/favicon.ico')}}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="ialsmxvxbFVMvehWybzdppDZtGxGJ4kODeqmi07p">
-    <title>Vault Capital | User Dashboard</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="bingbot" content="noindex, nofollow">
+    <meta name="scam-advisor" content="noindex, nofollow">
+    <meta name="scam-adviser" content="noindex, nofollow">
+    <meta name="scamadviser" content="noindex, nofollow">
+    <meta name="google" content="noindex, nofollow">
     <link rel="icon" href="{{asset('user/account/storage/app/public/photos/uPYDzhfavicon.png1677339254')}}"
         type="image/png" />
     <link rel="icon" href="{{ asset('account/cloud/uploads/favicon.png')}}" type="image/png" />

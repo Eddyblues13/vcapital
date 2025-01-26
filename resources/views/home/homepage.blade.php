@@ -474,23 +474,103 @@
 </div>
 
 <!-- Affiliate Section -->
-<section class="affiliate_area py-5">
+<!-- Affiliate Section -->
+<section class="affiliate_area py-5" style="background-color: #e3f2fd;">
     <div class="container">
+
+        <div class="row mb-5">
+            <div class="col-12 d-flex flex-column flex-sm-row justify-content-between text-center">
+
+                <div class="stat-block text-center">
+                    <figure class="mb-3">
+                        <img src="assets/images/stat1.png" alt="Total Investment" class="img-fluid"
+                            style="width: 80px; height: auto;">
+                    </figure>
+                    <h2 class="mb-2"><span>Total Investment</span></h2>
+                    <p class="fw-bold text-primary">$5,447,775.50</p>
+                </div>
+
+                <div class="stat-block text-center">
+                    <figure class="mb-3">
+                        <img src="assets/images/stat3.png" alt="Total Withdrawal" class="img-fluid"
+                            style="width: 80px; height: auto;">
+                    </figure>
+                    <h2 class="mb-2"><span>Total Withdrawal</span></h2>
+                    <p class="fw-bold text-success">$8,354,619.73</p>
+                </div>
+
+                <div class="stat-block text-center">
+                    <figure class="mb-3">
+                        <img src="assets/images/stat4.png" alt="Visitors Online" class="img-fluid"
+                            style="width: 80px; height: auto;">
+                    </figure>
+                    <h2 class="mb-2"><span>Visitors Online</span></h2>
+                    <p class="fw-bold text-warning">3,472</p>
+                </div>
+
+                <div class="stat-block text-center">
+                    <figure class="mb-3">
+                        <img src="assets/images/stat5.png" alt="Running Days" class="img-fluid"
+                            style="width: 80px; height: auto;">
+                    </figure>
+                    <h2 class="mb-2"><span>Running Days</span></h2>
+                    <p class="fw-bold text-danger">5,869</p>
+                </div>
+
+            </div>
+        </div>
+
         <div class="row align-items-center">
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
                 <div class="affiliate_text text-center text-lg-start">
-                    <h1 class="mb-3">Earn more by <span>referring</span> new members</h1>
-                    <p>Get paid up to <span>5% referral commission</span></p>
+                    <h1 class="mb-3 text-dark">Earn more by <span class="text-primary">referring</span> new members</h1>
+                    <p class="text-muted">Get paid up to <span class="text-primary fw-bold">5% referral
+                            commission</span></p>
                 </div>
             </div>
+
             <div class="col-lg-6 col-md-12 text-center">
                 <div class="affiliate_image">
-                    <figure><img src="assets/images/affiliates.png" alt="Affiliates" class="img-fluid"></figure>
+                    <figure>
+                        <img src="assets/images/affiliates.png" alt="Affiliates" class="img-fluid"
+                            style="max-width: 100%; height: auto;">
+                    </figure>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container py-5">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+        <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+            <span class="blue-text">TradingView</span>
+        </a>
+    </div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async>
+        {
+        "symbols": [
+            { "proName": "FOREXCOM:SPXUSD", "title": "S&P 500 Index" },
+            { "proName": "FOREXCOM:NSXUSD", "title": "US 100 Cash CFD" },
+            { "proName": "FX_IDC:EURUSD", "title": "EUR to USD" },
+            { "proName": "BITSTAMP:BTCUSD", "title": "Bitcoin" },
+            { "proName": "BITSTAMP:ETHUSD", "title": "Ethereum" }
+        ],
+        "showSymbolLogo": true,
+        "isTransparent": false,
+        "displayMode": "adaptive",
+        "colorTheme": "light",
+        "locale": "en"
+    }
+    </script>
+</div>
+<!-- TradingView Widget END -->
+
 
 <!-- Payment Processors -->
 <section class="statistics py-5">

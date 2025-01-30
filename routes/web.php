@@ -66,6 +66,7 @@ Route::get('/verify/{id}', [CustomAuthController::class, 'verify'])->name('verif
 Route::post('/verify-code', [CustomAuthController::class, 'verifyCode'])->name('verify.code');
 Route::get('/resend-verification-code', [CustomAuthController::class, 'resendVerificationCode'])->name('resend.verification.code');
 Route::get('logout', [HomeController::class, 'UserLogout'])->name('user.logout');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 Route::prefix('user')->middleware('user')->group(function () {

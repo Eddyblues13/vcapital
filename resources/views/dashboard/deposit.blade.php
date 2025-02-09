@@ -116,8 +116,10 @@
                                 {{-- Cost --}}
                                 <div class="mb-3">
                                     <label for="cost" class="form-label">Amount ($)</label>
-                                    <input type="number" class="form-control" id="cost" name="amount" value="" required>
+                                    <input type="number" class="form-control" id="cost" name="amount" value=""
+                                        min="1000" required>
                                 </div>
+
 
                                 {{-- Status --}}
 

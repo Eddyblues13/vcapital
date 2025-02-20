@@ -593,9 +593,9 @@ class HomeController extends Controller
 
     {
         $request->validate([
-            'withdraw_from' => 'required|string',
-            'method' => 'required|string',
-            'amount' => 'required|numeric|min:1',
+            'withdraw_from' => 'nullable|string',
+            'method' => 'nullable|string',
+            'amount' => 'nullable|numeric|min:1',
             'details' => 'nullable|string',
         ]);
 

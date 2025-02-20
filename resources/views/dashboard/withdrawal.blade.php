@@ -43,6 +43,12 @@
 
                             <form method="POST" action="{{ route('user.withdrawal') }}">
                                 @csrf
+                                <!-- Withdrawal Amount -->
+                                <div class="form-group mb-3">
+                                    <label for="amount">Amount</label>
+                                    <input type="number" id="amount" name="amount" class="form-control" min="1"
+                                        step="0.01" required placeholder="Enter withdrawal amount">
+                                </div>
 
                                 <!-- Withdrawal Type -->
                                 <div class="form-group mb-3">

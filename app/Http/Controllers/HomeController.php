@@ -150,6 +150,21 @@ class HomeController extends Controller
         // if ($payment_id == 'Bank Transfer') {
         //     return view('user.bank', $data);
         // }
+
+        // Validate the request
+        $request->validate([
+            'amount' => 'required|numeric|min:1000',
+        ]);
+
+        // Store the deposit
+        $deposit = Deposit::create([
+            'user_id' => Auth::id(),
+            'amount' => $request->amount,
+            'deposit_type' => 'crypto', // You can adjust this value dynamically
+            'payment_mode' => $request->payment_id, // Storing the selected payment method
+            'proof' => null, // Proof can be handled separately if needed
+            'status' => 'pending', // Default status
+        ]);
         return view('dashboard.payment', $data);
     }
 
